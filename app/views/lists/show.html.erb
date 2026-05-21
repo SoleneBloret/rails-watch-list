@@ -1,5 +1,15 @@
 <div class="container">
   <h1><%= @list.name %></h1>
 
-<%= link_to "Homepage", root_path %>
+  <%= link_to "Add bookmark", new_list_bookmark_path(@list) %>
+  <br>
+
+  <ul>
+    <% @bookmarks.each do |movie| %>
+      <li><%= movie.comment %></li>
+    <% end %>
+  </ul>
+
+  <br>
+  <%= link_to "Homepage", root_path %>
 </div>
