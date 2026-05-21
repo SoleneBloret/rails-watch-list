@@ -1,0 +1,12 @@
+<div class="container">
+
+  <h1> Save your favorite movies </h1>
+
+  <ul>
+    <% @lists.each do |list| %>
+    <li><%= link_to list.name, list %></li>
+    <% end %>
+
+  </ul>
+
+</div>

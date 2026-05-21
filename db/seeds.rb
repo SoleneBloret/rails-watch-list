@@ -7,7 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Cleaning list database"
 Movie.destroy_all
+
 puts "get json and open-uri"
 require "json"
 require "open-uri"
@@ -27,5 +29,16 @@ movies["results"].each do |movie|
     rating: movie["vote_average"],
   )
 end
+
+puts "Cleaning list database"
+List.destroy_all
+
+puts "Creating lists"
+List.create!(
+  name: "Classic movies"
+)
+List.create!(
+  name: "Superheroes"
+)
 
 puts "Finished!"
