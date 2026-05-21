@@ -5,8 +5,12 @@
   <br>
 
   <ul>
-    <% @bookmarks.each do |movie| %>
-      <li><%= movie.comment %></li>
+    <% @bookmarks.each do |bookmark| %>
+      <li>
+        <%= bookmark.movie.title %>
+        <p><%= bookmark.comment %></p>
+        <p>⭐️ <%= bookmark.movie.rating.to_i %>/10</p>
+      </li>
     <% end %>
   </ul>
 
