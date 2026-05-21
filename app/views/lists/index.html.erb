@@ -1,17 +1,18 @@
 <div class="container">
-
-  <h1> Save your favorite movies </h1>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_path("index-banner.jpg") %>')">
+    <div class="container">
+      <h1>Save your <strong>favorite movies</strong>!</h1>
+      <p>Change your life and save your favorite movies in lists with bookmarks.</p>
+    </div>
+  </div>
 
   <h2>My lists</h2>
+  <button type="button" class="btn btn-primary"><%= link_to "New list", new_list_path %></button>
 
-  <%= link_to "New list", new_list_path %>
-
-  <ul>
-    <% @lists.each do |list| %>
-    <li><%= link_to list.name, list %></li>
-    <% end %>
-
-  </ul>
-
+    <ul>
+      <% @lists.each do |list| %>
+      <li><%= link_to list.name, list %></li>
+      <% end %>
+    </ul>
 
 </div>
