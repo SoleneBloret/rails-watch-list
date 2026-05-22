@@ -1,22 +1,23 @@
-<div class="container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_path("index-banner.jpg") %>')">
-    <div class="container">
-      <h1>Save your <strong>favorite movies</strong>!</h1>
-      <p>Change your life and save your favorite movies in lists with bookmarks.</p>
-    </div>
+<!-- ---------- BANNER ---------- -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path('myke-simon-atsUqIm3wxo-unsplash_cmidio') %>')">
+  <div class="container">
+    <h1>Save your <strong>favorite movies</strong>!</h1>
+    <p>Change your life and save your favorite movies in lists with bookmarks.</p>
   </div>
+</div>
 
-  <h2>My lists</h2>
-  <button type="button" class="btn btn-primary"><%= link_to "New list", new_list_path %></button>
+<!-- ---------- TITRE ---------- -->
+<h2>My lists</h2>
+<button type="button" class="btn btn-primary"><%= link_to "New list", new_list_path %></button>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% @lists.each do |list| %>
-      <div class="col">
-        <div class="card btn" >
-          <h5 class="card-title"><%= link_to list.name, list %></h5>
-        </div>
+
+<!-- ---------- MOVIE LISTS ---------- -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @lists.each do |list| %>
+    <div class="col">
+      <div class="card btn" >
+        <h5 class="card-title"><%= link_to list.name, list %></h5>
       </div>
-    <% end %>
-  </div>
-
+    </div>
+  <% end %>
 </div>
