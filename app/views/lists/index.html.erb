@@ -7,15 +7,23 @@
 </div>
 
 <!-- ---------- TITRE ---------- -->
-<h2>My lists</h2>
-<button type="button" class="btn btn-primary"><%= link_to "New list", new_list_path %></button>
-
+<div id="home-page-title" class="row">
+  <div class="col">
+    <h2>My lists</h2>
+  </div>
+  <div class="col">
+    <button type="button" class="btn btn-outline-primary"><%= link_to "New list", new_list_path %></button>
+  </div>
+</div>
 
 <!-- ---------- MOVIE LISTS ---------- -->
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div id="movie-list-cards" class="row row-cols-1 row-cols-md-3 g-4">
   <% @lists.each do |list| %>
     <div class="col">
       <div class="card btn" >
+        <% if list.photo.attached? %>
+          <%= cl_image_tag(list.photo.key) %>
+        <% end %>
         <h5 class="card-title"><%= link_to list.name, list %></h5>
       </div>
     </div>
