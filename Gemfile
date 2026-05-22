@@ -33,7 +33,6 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
 
 group :development, :test do
-
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
 
@@ -47,7 +46,6 @@ group :development, :test do
 end
 
 group :development do
-
   gem "web-console"
 end
 gem 'rspec-rails', group: [ :test ]
